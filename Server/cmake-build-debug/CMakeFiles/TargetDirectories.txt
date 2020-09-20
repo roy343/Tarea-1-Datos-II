@@ -1,0 +1,3 @@
+/home/roy/Tarea-1-Datos-II/Server/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/roy/Tarea-1-Datos-II/Server/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/roy/Tarea-1-Datos-II/Server/cmake-build-debug/CMakeFiles/Server.dir
