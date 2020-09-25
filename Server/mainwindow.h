@@ -7,23 +7,25 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
-class QTcpSocket;
+class server;
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
-    void on_pushButton_2_clicked();
+    void on_iniciar_clicked();
 
-    void on_pushButton_clicked();
+    void on_enviar_clicked();
+
+    void on_quitar_clicked();
 
 private:
     Ui::MainWindow *ui;
-    QTcpSocket *mSocket;
+    server *mserver;
 };
 #endif // MAINWINDOW_H

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated />
+    <generated>
+      <config projectName="Server" targetName="Server" />
+    </generated>
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -18,6 +20,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -46,6 +49,11 @@
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Server" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Server" TARGET_NAME="Server" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Server" RUN_TARGET_NAME="Server">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -61,7 +69,7 @@
       <option name="presentableId" value="Default" />
       <updated>1600618416814</updated>
       <workItem from="1600618418924" duration="2940000" />
-      <workItem from="1600873704092" duration="10133000" />
+      <workItem from="1600873704092" duration="8802000" />
     </task>
     <servers />
   </component>
@@ -73,22 +81,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="478" y="279" width="424" height="478" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1600912949488" />
-    <state width="1878" height="292" key="GridCell.Tab.0.bottom" timestamp="1600992425343">
+    <state width="1878" height="292" key="GridCell.Tab.0.bottom" timestamp="1600960459432">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="292" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600992425343" />
-    <state width="1878" height="292" key="GridCell.Tab.0.center" timestamp="1600992425342">
+    <state width="1878" height="292" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600960459432" />
+    <state width="1878" height="292" key="GridCell.Tab.0.center" timestamp="1600960459432">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="292" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600992425342" />
-    <state width="1878" height="292" key="GridCell.Tab.0.left" timestamp="1600992425341">
+    <state width="1878" height="292" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600960459432" />
+    <state width="1878" height="292" key="GridCell.Tab.0.left" timestamp="1600960459432">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="292" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600992425341" />
-    <state width="1878" height="292" key="GridCell.Tab.0.right" timestamp="1600992425342">
+    <state width="1878" height="292" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600960459432" />
+    <state width="1878" height="292" key="GridCell.Tab.0.right" timestamp="1600960459432">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="292" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600992425342" />
+    <state width="1878" height="292" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600960459432" />
     <state x="682" y="306" width="546" height="419" key="refactoring.ChangeSignatureDialog" timestamp="1600905952509">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

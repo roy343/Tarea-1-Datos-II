@@ -143,6 +143,33 @@ Server/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/build
 .PHONY : Server/fast
 
+floyd_warshall.o: floyd_warshall.cpp.o
+
+.PHONY : floyd_warshall.o
+
+# target to build an object file
+floyd_warshall.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/floyd_warshall.cpp.o
+.PHONY : floyd_warshall.cpp.o
+
+floyd_warshall.i: floyd_warshall.cpp.i
+
+.PHONY : floyd_warshall.i
+
+# target to preprocess a source file
+floyd_warshall.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/floyd_warshall.cpp.i
+.PHONY : floyd_warshall.cpp.i
+
+floyd_warshall.s: floyd_warshall.cpp.s
+
+.PHONY : floyd_warshall.s
+
+# target to generate assembly for a file
+floyd_warshall.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/floyd_warshall.cpp.s
+.PHONY : floyd_warshall.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -179,6 +206,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Server"
+	@echo "... floyd_warshall.o"
+	@echo "... floyd_warshall.i"
+	@echo "... floyd_warshall.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

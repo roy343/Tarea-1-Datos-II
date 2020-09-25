@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/roy/Tarea-1-Datos-II/Server/floyd_warshall.h
+bits/stdc++.h
+-
+
+/home/roy/Tarea-1-Datos-II/Server/main.cpp
+unistd.h
+-
+stdio.h
+-
+sys/socket.h
+-
+stdlib.h
+-
+netinet/in.h
+-
+string.h
+-
+floyd_warshall.h
+/home/roy/Tarea-1-Datos-II/Server/floyd_warshall.h
+

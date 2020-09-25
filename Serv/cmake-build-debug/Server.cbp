@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/roy/Tarea-1-Datos-II/Server/floyd_warshall.cpp">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/home/roy/Tarea-1-Datos-II/Server/floyd_warshall.h">
+			<Option target="Server"/>
+		</Unit>
 		<Unit filename="/home/roy/Tarea-1-Datos-II/Server/main.cpp">
 			<Option target="Server"/>
 		</Unit>
