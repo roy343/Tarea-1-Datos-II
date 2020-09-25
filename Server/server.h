@@ -1,18 +1,21 @@
 #ifndef SERVER_H
 #define SERVER_H
 
-#include <QTcpServer>
+#include <QObject>
+#include <QLocalServer>
 
-class QTcpSocket;
+class QLocalSocket;
 
-class server : public QTcpServer
+class Server : public QLocalServer
 {
+    Q_OBJECT
 public:
-    server();
-    explicit server(QObject *parent = 0);
+    explicit Server(QObject *parent = nullptr);
     void envia(const QString &msj);
 private:
-    QTcpSocket *mSocket;
+    QLocalSocket *mSocket;
+signals:
+
 };
 
 #endif // SERVER_H

@@ -1,21 +1,21 @@
 #include "server.h"
-#include <QTcpSocket>
+#include <QLocalSocket>
 #include <QTextStream>
 
-server::server(QObject *parent) : QTcpServer(parent)
+Server::Server(QObject *parent) : QLocalServer(parent)
 {
-    mSocket = nullptr;
+ mSocket = nullptr;
 
-    connect(this,&server::newConnection,[&](){
-        mSocket = nextPendingConnection();
-    });
+ connect(this, &Server::newConnection,[&](){
+   mSocket = nextPendingConnection();
+   QTextStream T(mSocket);
+ });
 }
 
-void server::envia(const QString &msj)
-{
+void Server ::envia(const QString &msj){
     if(mSocket){
     QTextStream T(mSocket);
-    T << msj;
+    T<<msj;
     mSocket->flush();
     }
 }
