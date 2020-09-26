@@ -9,22 +9,20 @@ Widget::Widget(QWidget *parent)
 {
     ui->setupUi(this);
     mSocket = new QLocalSocket(this);
+    mSocket->connectToServer("floyd");
 
     connect(mSocket,&QLocalSocket::readyRead,[&](){
+
         QTextStream T(mSocket);
+
         ui->listWidget->addItem(T.readAll());
     });
+
 }
 
 Widget::~Widget()
 {
     delete ui;
-}
-
-
-void Widget::on_conectar_clicked()
-{
-    mSocket->connectToServer("floyd");
 }
 
 void Widget::on_quitar_clicked()

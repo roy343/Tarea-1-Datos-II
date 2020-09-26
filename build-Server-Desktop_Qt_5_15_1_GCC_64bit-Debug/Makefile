@@ -52,11 +52,15 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../Server/main.cpp \
+SOURCES       = ../Server/floydWarshall.cpp \
+		../Server/grafo.cpp \
+		../Server/main.cpp \
 		../Server/server.cpp \
 		../Server/widget.cpp moc_server.cpp \
 		moc_widget.cpp
-OBJECTS       = main.o \
+OBJECTS       = floydWarshall.o \
+		grafo.o \
+		main.o \
 		server.o \
 		widget.o \
 		moc_server.o \
@@ -217,6 +221,7 @@ DIST          = ../../Qt/5.15.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../../Qt/5.15.1/gcc_64/mkspecs/features/qt_config.prf \
 		../../Qt/5.15.1/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../Qt/5.15.1/gcc_64/mkspecs/features/spec_post.prf \
+		../Server/.qmake.stash \
 		../../Qt/5.15.1/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../Qt/5.15.1/gcc_64/mkspecs/features/toolchain.prf \
 		../../Qt/5.15.1/gcc_64/mkspecs/features/default_pre.prf \
@@ -237,8 +242,11 @@ DIST          = ../../Qt/5.15.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../../Qt/5.15.1/gcc_64/mkspecs/features/exceptions.prf \
 		../../Qt/5.15.1/gcc_64/mkspecs/features/yacc.prf \
 		../../Qt/5.15.1/gcc_64/mkspecs/features/lex.prf \
-		../Server/Server.pro ../Server/server.h \
-		../Server/widget.h ../Server/main.cpp \
+		../Server/Server.pro ../Server/grafo.h \
+		../Server/server.h \
+		../Server/widget.h ../Server/floydWarshall.cpp \
+		../Server/grafo.cpp \
+		../Server/main.cpp \
 		../Server/server.cpp \
 		../Server/widget.cpp
 QMAKE_TARGET  = Server
@@ -408,6 +416,7 @@ Makefile: ../Server/Server.pro ../../Qt/5.15.1/gcc_64/mkspecs/linux-g++/qmake.co
 		../../Qt/5.15.1/gcc_64/mkspecs/features/qt_config.prf \
 		../../Qt/5.15.1/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../Qt/5.15.1/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../Qt/5.15.1/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../Qt/5.15.1/gcc_64/mkspecs/features/toolchain.prf \
 		../../Qt/5.15.1/gcc_64/mkspecs/features/default_pre.prf \
@@ -586,6 +595,7 @@ Makefile: ../Server/Server.pro ../../Qt/5.15.1/gcc_64/mkspecs/linux-g++/qmake.co
 ../../Qt/5.15.1/gcc_64/mkspecs/features/qt_config.prf:
 ../../Qt/5.15.1/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../Qt/5.15.1/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../Qt/5.15.1/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../Qt/5.15.1/gcc_64/mkspecs/features/toolchain.prf:
 ../../Qt/5.15.1/gcc_64/mkspecs/features/default_pre.prf:
@@ -622,8 +632,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../Qt/5.15.1/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Server/server.h ../Server/widget.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Server/main.cpp ../Server/server.cpp ../Server/widget.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Server/grafo.h ../Server/server.h ../Server/widget.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Server/floydWarshall.cpp ../Server/grafo.cpp ../Server/main.cpp ../Server/server.cpp ../Server/widget.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Server/widget.ui $(DISTDIR)/
 
 
@@ -862,6 +872,12 @@ compiler_lex_clean:
 compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
+
+floydWarshall.o: ../Server/floydWarshall.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o floydWarshall.o ../Server/floydWarshall.cpp
+
+grafo.o: ../Server/grafo.cpp ../Server/grafo.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o grafo.o ../Server/grafo.cpp
 
 main.o: ../Server/main.cpp ../Server/widget.h \
 		../../Qt/5.15.1/gcc_64/include/QtWidgets/QWidget \
@@ -1157,6 +1173,33 @@ widget.o: ../Server/widget.cpp ../Server/widget.h \
 		../../Qt/5.15.1/gcc_64/include/QtGui/qvector2d.h \
 		../../Qt/5.15.1/gcc_64/include/QtGui/qtouchdevice.h \
 		ui_widget.h \
+		../../Qt/5.15.1/gcc_64/include/QtCore/QVariant \
+		../../Qt/5.15.1/gcc_64/include/QtWidgets/QApplication \
+		../../Qt/5.15.1/gcc_64/include/QtWidgets/qapplication.h \
+		../../Qt/5.15.1/gcc_64/include/QtCore/qcoreapplication.h \
+		../../Qt/5.15.1/gcc_64/include/QtCore/qeventloop.h \
+		../../Qt/5.15.1/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../Qt/5.15.1/gcc_64/include/QtGui/qguiapplication.h \
+		../../Qt/5.15.1/gcc_64/include/QtGui/qinputmethod.h \
+		../../Qt/5.15.1/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../Qt/5.15.1/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../Qt/5.15.1/gcc_64/include/QtWidgets/qlayout.h \
+		../../Qt/5.15.1/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../Qt/5.15.1/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../Qt/5.15.1/gcc_64/include/QtWidgets/QLabel \
+		../../Qt/5.15.1/gcc_64/include/QtWidgets/qlabel.h \
+		../../Qt/5.15.1/gcc_64/include/QtWidgets/qframe.h \
+		../../Qt/5.15.1/gcc_64/include/QtWidgets/QLineEdit \
+		../../Qt/5.15.1/gcc_64/include/QtWidgets/qlineedit.h \
+		../../Qt/5.15.1/gcc_64/include/QtGui/qtextcursor.h \
+		../../Qt/5.15.1/gcc_64/include/QtGui/qtextformat.h \
+		../../Qt/5.15.1/gcc_64/include/QtGui/qpen.h \
+		../../Qt/5.15.1/gcc_64/include/QtGui/qtextoption.h \
+		../../Qt/5.15.1/gcc_64/include/QtWidgets/QPushButton \
+		../../Qt/5.15.1/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../Qt/5.15.1/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../Qt/5.15.1/gcc_64/include/QtGui/qicon.h \
+		../../Qt/5.15.1/gcc_64/include/QtWidgets/QSpacerItem \
 		../Server/server.h \
 		../../Qt/5.15.1/gcc_64/include/QtCore/QObject \
 		../../Qt/5.15.1/gcc_64/include/QtNetwork/QLocalServer \
@@ -1166,7 +1209,9 @@ widget.o: ../Server/widget.cpp ../Server/widget.h \
 		../../Qt/5.15.1/gcc_64/include/QtNetwork/qabstractsocket.h \
 		../../Qt/5.15.1/gcc_64/include/QtWidgets/QMessageBox \
 		../../Qt/5.15.1/gcc_64/include/QtWidgets/qmessagebox.h \
-		../../Qt/5.15.1/gcc_64/include/QtWidgets/qdialog.h
+		../../Qt/5.15.1/gcc_64/include/QtWidgets/qdialog.h \
+		../Server/floydwarshall.cpp \
+		../Server/floydwarshall.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o widget.o ../Server/widget.cpp
 
 moc_server.o: moc_server.cpp 

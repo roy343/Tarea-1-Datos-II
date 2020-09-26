@@ -1,3 +1,6 @@
+/*
+ *@file widget.h
+ */
 #ifndef WIDGET_H
 #define WIDGET_H
 
@@ -18,9 +21,7 @@ public:
     ~Widget();
 
 private slots:
-    void on_conectar_clicked();
-
-    void on_quitar_clicked();
+   void on_quitar_clicked();
 
 private:
     Ui::Widget *ui;

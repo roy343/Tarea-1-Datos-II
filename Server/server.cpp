@@ -1,6 +1,15 @@
+/*
+ *@file server.cpp
+ */
+
 #include "server.h"
 #include <QLocalSocket>
 #include <QTextStream>
+
+/*
+ *@class Server
+ *@brief clase principal del server
+ */
 
 Server::Server(QObject *parent) : QLocalServer(parent)
 {
@@ -11,6 +20,11 @@ Server::Server(QObject *parent) : QLocalServer(parent)
    QTextStream T(mSocket);
  });
 }
+
+
+/*
+ *@brief Funcion para enviar informacion al cliente
+ */
 
 void Server ::envia(const QString &msj){
     if(mSocket){
